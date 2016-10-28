@@ -1,4 +1,4 @@
-Package: rop
+Package: rops
 Title: Extended User Defined Operators for R
 Version: 0.0.0.9000
 Authors@R: person("James", "Balamuta", email = "balamut2@illinois.edu", role = c("aut", "cre"))
@@ -10,3 +10,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 5.0.1
+Suggests: testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

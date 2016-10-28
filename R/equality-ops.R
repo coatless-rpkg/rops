@@ -1,39 +1,3 @@
-#' Null Coalescing Operator
-#'
-#' Binary operator to simplify null expressions
-#' @param x A value that is possible \code{NULL}
-#' @param y A value that is not \code{NULL}
-#' @return Returns the value of the left hand side (LHS) if it is not null, else
-#' returns the value of the right hand side (RHS) that may be \code{NULL}.
-#' @rdname null_coalesce
-#' @details
-#' The objective of the null coalescing operator is to simplify the expression:
-#' \code{if(is.null(x)){ y } else { x }} so that it is readable inline.
-#' @export
-#' @seealso \code{\link{is.null}}
-#' @examples
-#' # Returns 3 as the LHS is _not_ NULL
-#' 3 %??% 4
-#'
-#' # Returns 1 as the LHS is _not_ NULL
-#' 1 %??% NULL
-#'
-#' # Returns 2 as the LHS is NULL
-#' NULL %??% 2
-#'
-#' # Coalesce operator
-#' NULL %??% NULL %??% 5
-#'
-#' # Coalesce operator
-#' NULL %??% 7 %??% 8
-#' @references
-#' \url{https://en.wikipedia.org/wiki/Null_coalescing_operator}
-`%??%` <- function(x, y) if(is.null(x)) y else x
-
-#' @export
-#' @rdname null_coalesce
-ifnull <- function(x, y) ifelse(vapply(x, is.null, TRUE), y, x)
-
 #' Exact Object Equality Check
 #'
 #' Short-hand declarations for checking whether x is equivalent to y

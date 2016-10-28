@@ -1,0 +1,32 @@
+---
+output: github_document
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+[![Travis-CI Build Status](https://travis-ci.org/coatless/rops.svg?branch=master)](https://travis-ci.org/coatless/rops)[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/rop)](https://cran.r-project.org/package=rops)
+
+# R Ops (`rops`)
+
+The objective behind this package is to provide an extension to base *R* that
+supplements present operators manipulations.
+
+
+# Supported Functionality
+
+Presently, the package has support for the following operators:
+
+- [Null coalescing operator](https://en.wikipedia.org/wiki/Null_coalescing_operator): `%??%`
+     - Operator to allow checking and substitution if a value is null without `if`/`else` structure 
+     
+- [Missing value (`NA`) coalescing operator](): `ifna(x,y)`
+     - Substitute value when NA is detected.
+
+- [Is Whole Number](https://en.wikipedia.org/wiki/Integer): `is_whole(x)`
+     - Vectorized boolean operator to assess whether value is an integer.

@@ -3,5 +3,5 @@
 export("%!=%")
 export("%==%")
 export("%??%")
-export(ifnull)
+export(ifna)
 export(is_whole)
