@@ -15,6 +15,8 @@ Status](https://img.shields.io/codecov/c/github/coatless/rops/master.svg)](https
 The objective behind this package is to provide an extension to base *R*
 that supplements present operators manipulations.
 
+![Demo of Operators](https://i.imgur.com/IGMeU0J.gif)
+
 # Supported Functionality
 
 Presently, the package has support for the following operators:
