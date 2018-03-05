@@ -44,3 +44,33 @@
 #' @rdname obj_check
 #' @export
 `%!=%` = function(x, y) !identical(x, y)
+
+#' Not in
+#'
+#' Determine if an element is not present inside of a set. In particular,
+#' this function checks to see if `x` is not in `table`.
+#'
+#' @inheritParams base::match
+#'
+#' @return A logical vector of `TRUE` or `FALSE` that indicates if a match was
+#'         **not** found for each element of `x`.
+#' @author JJB
+#' @details
+#' This operator is a modified version of the \code{\link[base]{\%in\%}} function.
+#'
+#' @seealso \code{\link[base]{\%in\%}}
+#'
+#' @examples
+#' # Returns TRUE as 2 is not found in the vector c(3, 4)
+#' 2 %notin% c(3, 4)
+#'
+#' # Returns FALSE as 2 is found in the vector c(1, 2)
+#' 2 %notin% c(1, 2)
+#'
+#' # Vectorized variant that contains FALSE and TRUE
+#' c(1, 2) %notin% c(2, 3)
+#' @export
+`%notin%` = function(x, table) {
+    # Same as !(x %in% table)
+    match(x, table, nomatch = 0L) == 0L
+}
