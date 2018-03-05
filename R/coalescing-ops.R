@@ -1,20 +1,22 @@
 #' Null Coalescing Operator
 #'
 #' Binary operator to simplify null expressions
-#' @param x A value that is possible \code{NULL}
-#' @param y A value that is not \code{NULL}
+#'
+#' @param x A value that is possible `NULL`
+#' @param y A value that is not `NULL`
+#'
 #' @return Returns the value of the left hand side (LHS) if it is not null, else
-#' returns the value of the right hand side (RHS) that may be \code{NULL}.
+#' returns the value of the right hand side (RHS) that may be `NULL`.
 #' @rdname null_coalesce
 #' @details
 #' The objective of the null coalescing operator is to simplify the expression:
-#' \code{if(is.null(x)){ y } else { x }} so that it is readable inline.
+#' `if(is.null(x)){ y  else { x }}` so that it is readable inline.
 #'
 #' @section Warning:
-#' Due to the way objects are created within \emph{R}, the \code{NULL} value
+#' Due to the way objects are created within _R_, the `NULL` value
 #' is not able to be stored within \code{\link[=vector]{atomic vectors}}.
 #' However, the \code{\link{NULL}} value can be stored within a \code{\link{list}}.
-#' This operator will \emph{not} be triggered if \code{\link{NULL}} is within
+#' This operator will _not_ be triggered if \code{\link{NULL}} is within
 #' a list! That is, the RHS side will be returned.
 #' @export
 #' @seealso \code{\link{is.null}}, \code{\link{NULL}}
@@ -45,19 +47,19 @@
 #' NULL %??% 7 %??% 8
 #' @references
 #' \url{https://en.wikipedia.org/wiki/Null_coalescing_operator}
-`%??%` <- function(x, y) if(is.null(x)) y else x
+`%??%` = function(x, y) if(is.null(x)) y else x
 
 
 #' Missingness Coalescing Operator
 #'
-#' Substitutes values when \code{NA} is detected.
-#' @param x An possibly containing \code{NA} values
+#' Substitutes values when `NA` is detected.
+#' @param x An possibly containing `NA` values
 #' @param y An object of equal length or a single value to be used in
 #'          substitution
 #' @details
 #' The objective of this function is to provide an ability to substitute values
-#' for NA. However, it is important to note that \emph{R} is unique in the fact
-#' that it has an \code{NA} data type to represent missingness instead of relying
+#' for NA. However, it is important to note that _R_ is unique in the fact
+#' that it has an `NA` data type to represent missingness instead of relying
 #' on values being pre-coded (e.g. 0, -1111, et cetera). Thus, the simplicity
 #' of this function comes with the disclaimer of:
 #'
@@ -69,13 +71,13 @@
 #' \url{https://support.office.com/en-us/article/IFNA-function-6626c961-a569-42fc-a49d-79b4951fd461}
 #' @examples
 #' # Data with missing values
-#' x <- c(1, NA, NA, 4)
+#' x = c(1, NA, NA, 4)
 #' # Substitution vector of equal length
-#' y <- 1:4
+#' y = 1:4
 #'
 #' # Replace NA with values in `y` vector
 #' ifna(x, y)
 #'
 #' # Replace NA with 5
 #' ifna(x, 5)
-ifna <- function(x, y) ifelse(is.na(x), y, x)
+ifna = function(x, y) ifelse(is.na(x), y, x)
