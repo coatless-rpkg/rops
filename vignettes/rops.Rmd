@@ -1,0 +1,152 @@
+---
+title: "Overview of Extended Binary Operators for Data Manipulation"
+author: "James J Balamuta"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Overview of Extended Operators}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Overview
+
+When writing functions or simply perform data analyses, sometimes you may 
+wish for just that one additional operator or equality check that speeds up
+the process greatly. The goal behind this package is to provide such
+operators with as _minimal_ an overhead as possible.
+
+# Package Installation
+
+To install the package, please type:
+
+```{r eval = FALSE}
+install.packages("rops")
+```
+
+# Using the package
+
+To use the package, please load it into the _R_ session by typing:
+
+```{r}
+library("rops")
+```
+
+# Coalescing Operators
+
+## Null coalescing operator
+
+```{r}
+# Null value
+x = NULL
+
+# Before
+y = if(is.null(x)){ "Unset" } else { x }
+
+# After
+y = x %??% "Unset"
+
+y
+```
+
+## Missing value (`NA`) coalescing operator
+
+To impute values when "missingness" is detected, the `ifna()` provides a
+convenient interface.
+
+```{r}
+x = c(1:5, NA, NA, 8, NA, 10)
+y = 1:10
+
+# Before
+ifelse(is.na(x), x, y)
+ifelse(is.na(x), x, 3)
+
+# After
+ifna(x, y)
+ifna(x, 3)
+```
+
+# Equality Operators
+
+Checking for exact equivalence in object can be done using an infix operator
+instead of relying upon `identical()`. 
+
+**NB** There are cases where checking with `all.equal()` is preferred. 
+
+```{r}
+x = y = 1:5
+x2 = x + 1
+
+# Before
+identical(x, y)
+identical(x2, y)
+
+# After
+x %==% y
+x2 %==% y
+
+# Before
+!identical(x, y)
+!identical(x2, y)
+
+# After
+x %!=% y
+x2 %!=% y
+```
+
+
+# Whole Numbers
+
+Previously, using `is.integer()` would yield a check on the type of vector.
+Here, the `is_whole()` function seeks to check the state of
+all numbers individually in the vector regardless of whether they are
+`numeric` or `integer`.
+
+```{r}
+x = c(1, 2, 3, 8.5)
+y = c(1L, 2L, 3L)
+
+# Before
+is.integer(x)
+is.integer(y)
+
+# After
+is_whole(x)
+is_whole(y)
+```
+
+# Safe Sequence Generation
+
+The colon operator (`:`) does not perform a check on whether the
+increment should be positive or negative. This leads to issues when
+iterating over an empty `vector` or `data.frame` using `1:length(obj)`. 
+To avoid this, safe sequences `%:%` performs a check to make sure the
+sequence is _positive_. If it is not, then an empty integer vector is
+created to avoid having a loop run.
+
+```{r}
+x = NULL
+
+# Before
+1:length(x)
+
+# After
+1 %:% length(x)
+```
+
+# Not in Set
+
+The not in set operator is a negation of the `%in%` operator that checks for
+whether an element belongs to the set. 
+
+```{r}
+x = 1:5
+set = 3:10
+
+# Before
+!(x %in% set)
+
+# After
+x %notin% set
+```
