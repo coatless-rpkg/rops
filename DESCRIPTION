@@ -11,9 +11,11 @@ Authors@R: c(
     )
 Description: Provides a set of user defined infix operators and functions with
     roots in other programming languages.
+URL: https://r-pkg.thecoatlessprofessor.com/rops/, https://github.com/coatless-rpkg/rops
+BugReports: https://github.com/coatless-rpkg/rops/issues
+License: MIT + file LICENSE
 Depends:
     R (>= 4.5.0)
-License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2
