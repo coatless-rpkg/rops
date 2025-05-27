@@ -7,7 +7,7 @@ developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repo
 [![R-CMD-check](https://github.com/coatless-rpkg/rops/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/coatless-rpkg/rops/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-# R Ops (`rops`)
+# R Ops (rops) <a href="https://r-pkgs.thecoatlessprofessor.com/rops/"><img src="man/figures/rops-logo.svg" align="right" width="138" alt="hex logo for rops" /></a>
 
 The objective behind this package is to provide an extension to base *R*
 that supplements present operators manipulations.
