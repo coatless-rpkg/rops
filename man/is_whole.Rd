@@ -7,20 +7,20 @@
 is_whole(x)
 }
 \arguments{
-\item{x}{A \code{numeric} value to check to see if it is an integer.}
+\item{x}{A \code{numeric} value to check to see if it is an \code{integer}.}
 }
 \value{
-A \code{boolean} value indicating whether the value is an integer or not.
+A \code{boolean} value indicating whether the value is an \code{integer} or not.
 }
 \description{
-Checks whether the submitted vector of values is a whole (integer) number.
+Checks whether the submitted vector of values is a whole (\code{integer}) number.
 }
 \details{
-The \code{is_whole} function provides a means to test whether
+The \code{is_whole()} function provides a means to test whether
 the \code{\link[base:numeric]{base::numeric()}} or \code{\link[base:integer]{base::integer()}} is a part of the whole
 number span (integers). For example, \code{1} and \code{2} would be considered integers
 whereas \code{3.6} and \code{0.31} would be considered \code{\link[base:numeric]{base::numeric()}}. The behavior
-of this function differs from \code{\link[base:is.integer]{base::is.integer()}} as it is \emph{not}
+of this function differs from \code{\link[base:integer]{base::is.integer()}} as it is \emph{not}
 performing a check on the \link[base:typeof]{storage type}] of the vector
 but instead on the actual vector contents.
 }
@@ -30,7 +30,4 @@ is_whole(4)
 is_whole(c(1,2,3))
 is_whole(c(.4,.5,.6))
 is_whole(c(7,.8,9))
-}
-\author{
-JJB
 }

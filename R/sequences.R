@@ -5,21 +5,21 @@
 #'
 #' @inheritParams base::seq
 #'
-#' @return An integer vector that is either empty or contains a sequence of
+#' @return
+#' An integer vector that is either empty or contains a sequence of
 #' numbers.
 #'
-#' @author JJB
 #' @details
-#' Creating sequences using either [base::seq()] function or \code{\link[base]{Colon}}
+#' Creating sequences using either [base::seq()] function or [`:`]
 #' operator have a notable draw back of incorrectly generating positional
 #' indices when a vector is empty. For example, consider `x = NULL`. Then,
 #' the expression `1:length(x)` would evaluate to `1:0` which expands to `c(1,0)`.
 #' As a result, any \code{\link[base]{Control}} may inadvertantly trigger an out of bounds
 #' error on the initial run.
 #'
-#' The `safe_seq()` and \code{\%:\%} operator seeks to prevent this issue by enforcing
+#' The `safe_seq()` and `%:%` operator seeks to prevent this issue by enforcing
 #' either an ascending or descending sequence depending on the `by` condition.
-#' For the \code{\%:\%} operator, note that this is restricted to being _always_
+#' For the `%:%` operator, note that this is restricted to being _always_
 #' positive.
 #' @examples
 #' # Returns a sequence increasing by 1
@@ -35,7 +35,7 @@
 #' 1 %:% 4
 #' @rdname safe_seq
 #' @export
-safe_seq = function(from = 1L,
+safe_seq <- function(from = 1L,
                     to = 1L,
                     by = 1L) {
 
@@ -66,4 +66,4 @@ safe_seq = function(from = 1L,
 
 #' @rdname safe_seq
 #' @export
-`%:%` = function(from, to) { safe_seq(from, to, by = 1L) }
+`%:%` <- function(from, to) { safe_seq(from, to, by = 1L) }

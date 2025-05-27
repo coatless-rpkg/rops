@@ -20,7 +20,15 @@ Binary operator to simplify null expressions
 }
 \details{
 The objective of the null coalescing operator is to simplify the expression:
-\code{if(is.null(x)){ y else { x }}} so that it is readable inline.
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{if(is.null(x)) \{
+  y
+else \{
+  x
+\}
+}\if{html}{\out{</div>}}
+
+This allows it to be readable inline.
 }
 \section{Warning}{
 
@@ -33,13 +41,13 @@ a list! That is, the RHS side will be returned.
 
 \examples{
 # Null value
-x = NULL
+x <- NULL
 
 # Before
-y = if(is.null(x)){ "Unset" } else { x }
+y <- if(is.null(x)){ "Unset" } else { x }
 
 # After
-y = x \%??\% "Unset"
+y <- x \%??\% "Unset"
 
 # Concrete examples without variables
 # Returns 3 as the LHS is _not_ NULL
@@ -61,5 +69,5 @@ NULL \%??\% 7 \%??\% 8
 \url{https://en.wikipedia.org/wiki/Null_coalescing_operator}
 }
 \seealso{
-\code{\link{is.null}}, \code{\link{NULL}}
+\code{\link[=is.null]{is.null()}}, \code{\link{NULL}}
 }

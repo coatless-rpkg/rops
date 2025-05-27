@@ -4,7 +4,6 @@
 #'
 #' @param x,y two data structures
 #'
-#' @author JJB
 #' @details
 #' [base::identical()] function tests for an exact match meaning that
 #' the variable's storage types match, the overall environment the variable
@@ -21,7 +20,7 @@
 #' @examples
 #' # Generate some data
 #' set.seed(991)
-#' x = y = rnorm(100)
+#' x <- y <- rnorm(100)
 #'
 #' # Returns TRUE as the objects are exactly the same
 #' x %==% y
@@ -30,7 +29,7 @@
 #' x %!=% y
 #'
 #' # Change data
-#' x2 = x+1
+#' x2 <- x+1
 #'
 #' # Returns FALSE as the data has changed.
 #' x2 %==% y
@@ -39,11 +38,11 @@
 #' x2 %!=% y
 #' @rdname obj_check
 #' @export
-`%==%` = function(x, y) identical(x, y)
+`%==%` <- function(x, y) identical(x, y)
 
 #' @rdname obj_check
 #' @export
-`%!=%` = function(x, y) !identical(x, y)
+`%!=%` <- function(x, y) !identical(x, y)
 
 #' Not in
 #'
@@ -52,13 +51,15 @@
 #'
 #' @inheritParams base::match
 #'
-#' @return A logical vector of `TRUE` or `FALSE` that indicates if a match was
-#'         **not** found for each element of `x`.
-#' @author JJB
-#' @details
-#' This operator is a modified version of the \code{\link[base]{\%in\%}} function.
+#' @return
+#' A logical vector of `TRUE` or `FALSE` that indicates if a match was
+#' **not** found for each element of `x`.
 #'
-#' @seealso \code{\link[base]{\%in\%}}
+#' @details
+#' This operator is a modified version of the [`%in%`] function.
+#'
+#' @seealso
+#' [`%in%`]
 #'
 #' @examples
 #' # Returns TRUE as 2 is not found in the vector c(3, 4)
@@ -70,7 +71,7 @@
 #' # Vectorized variant that contains FALSE and TRUE
 #' c(1, 2) %notin% c(2, 3)
 #' @export
-`%notin%` = function(x, table) {
+`%notin%` <- function(x, table) {
     # Same as !(x %in% table)
     match(x, table, nomatch = 0L) == 0L
 }

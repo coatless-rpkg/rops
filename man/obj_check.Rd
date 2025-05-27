@@ -24,12 +24,12 @@ for small numerical differences.
 When in doubt, consult \code{\link[base:all.equal]{base::all.equal()}} to perform near equality tests
 using a tolerance operation (e.g does a number fall within a certain range).
 However, the use of \code{\link[base:all.equal]{base::all.equal()}} must be enclosed within
-\code{\link[base:isTRUE]{base::isTRUE()}} as the function is setup to return \emph{differences}.
+\code{\link[base:Logic]{base::isTRUE()}} as the function is setup to return \emph{differences}.
 }
 \examples{
 # Generate some data
 set.seed(991)
-x = y = rnorm(100)
+x <- y <- rnorm(100)
 
 # Returns TRUE as the objects are exactly the same
 x \%==\% y
@@ -38,7 +38,7 @@ x \%==\% y
 x \%!=\% y
 
 # Change data
-x2 = x+1
+x2 <- x+1
 
 # Returns FALSE as the data has changed.
 x2 \%==\% y
@@ -48,7 +48,4 @@ x2 \%!=\% y
 }
 \seealso{
 \code{\link[base:identical]{base::identical()}}
-}
-\author{
-JJB
 }

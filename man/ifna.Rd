@@ -19,18 +19,20 @@ Substitutes values when \code{NA} is detected.
 The objective of this function is to provide an ability to substitute values
 for NA. However, it is important to note that \emph{R} is unique in the fact
 that it has an \code{NA} data type to represent missingness instead of relying
-on values being pre-coded (e.g. 0, -1111, et cetera). Thus, the simplicity
+on values being pre-coded (e.g. \code{0}, \code{-1111}, et cetera). Thus, the simplicity
 of this function comes with the disclaimer of:
 
 "An NA is the presence of an absence.
 Don't forget that some missing values are the absence of a presence"
-\href{https://twitter.com/hadleywickham/status/738802081448886272}{Hadley Wickham on Twitter}
+\itemize{
+\item Hadley Wickham on Twitter
+}
 }
 \examples{
 # Data with missing values
-x = c(1, NA, NA, 4)
+x <- c(1, NA, NA, 4)
 # Substitution vector of equal length
-y = 1:4
+y <- 1:4
 
 # Replace NA with values in `y` vector
 ifna(x, y)

@@ -8,10 +8,10 @@ x \%notin\% table
 }
 \arguments{
 \item{x}{vector or \code{NULL}: the values to be matched.
-    \link{Long vectors} are supported.}
+    \link[base]{Long vectors} are supported.}
 
 \item{table}{vector or \code{NULL}: the values to be matched against.
-    \link{Long vectors} are not supported.}
+    \link[base]{Long vectors} are not supported.}
 }
 \value{
 A logical vector of \code{TRUE} or \code{FALSE} that indicates if a match was
@@ -22,7 +22,7 @@ Determine if an element is not present inside of a set. In particular,
 this function checks to see if \code{x} is not in \code{table}.
 }
 \details{
-This operator is a modified version of the \code{\link[base]{\%in\%}} function.
+This operator is a modified version of the \code{\link{\%in\%}} function.
 }
 \examples{
 # Returns TRUE as 2 is not found in the vector c(3, 4)
@@ -35,8 +35,5 @@ This operator is a modified version of the \code{\link[base]{\%in\%}} function.
 c(1, 2) \%notin\% c(2, 3)
 }
 \seealso{
-\code{\link[base]{\%in\%}}
-}
-\author{
-JJB
+\code{\link{\%in\%}}
 }
