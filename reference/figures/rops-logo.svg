@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 2521 2911">
+  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
+  <defs>
+    <style>
+      .st0 {
+        font-family: CourierNewPSMT, 'Courier New';
+        font-size: 70px;
+      }
+
+      .st0, .st1 {
+        fill: #fff;
+      }
+
+      .st0, .st1, .st2 {
+        isolation: isolate;
+      }
+
+      .st3 {
+        fill: url(#radial-gradient);
+      }
+
+      .st4 {
+        stroke: #fff;
+        stroke-width: 20px;
+      }
+
+      .st4, .st2 {
+        fill: none;
+      }
+
+      .st1, .st2 {
+        font-family: Arial-BoldMT, Arial;
+        font-size: 300px;
+        font-weight: 700;
+      }
+
+      .st5 {
+        opacity: .2;
+      }
+
+      .st2 {
+        stroke: #bf360c;
+        stroke-width: 2px;
+      }
+
+      .st6 {
+        filter: url(#shadow);
+      }
+    </style>
+    <filter id="shadow">
+      <feDropShadow dx="3" dy="3" flood-color="#000000" flood-opacity="0.3" stdDeviation="2"/>
+    </filter>
+    <radialGradient id="radial-gradient" cx="962.9" cy="1876.1" fx="962.9" fy="1876.1" r=".5" gradientTransform="translate(-1582734 3565729.7) scale(1645 -1900)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff6f00"/>
+      <stop offset=".7" stop-color="#e65100"/>
+      <stop offset="1" stop-color="#bf360c"/>
+    </radialGradient>
+  </defs>
+  <g class="st6">
+    <polygon class="st3" points="1260.5 505 2083 980 2083 1930 1260.5 2405 438 1930 438 980 1260.5 505"/>
+    <polygon class="st4" points="1260.5 505 2083 980 2083 1930 1260.5 2405 438 1930 438 980 1260.5 505"/>
+  </g>
+  <g class="st5">
+    <text class="st0" transform="translate(1153.9 1271.3)"><tspan x="0" y="0">%+%</tspan></text>
+    <text class="st0" transform="translate(671.8 1156.4)"><tspan x="0" y="0">%notin% </tspan></text>
+    <text class="st0" transform="translate(1657.6 1200.8)"><tspan x="0" y="0">%===%</tspan></text>
+    <text class="st0" transform="translate(587 1700)"><tspan x="0" y="0">%!==% </tspan></text>
+    <text class="st0" transform="translate(1498.5 1867.1)"><tspan x="0" y="0">%~=% </tspan></text>
+    <text class="st0" transform="translate(918.7 1898.8)"><tspan x="0" y="0">%:%</tspan></text>
+    <text class="st0" transform="translate(1680 1640.3)"><tspan x="0" y="0">%pad%</tspan></text>
+  </g>
+  <text class="st1" transform="translate(668.7 1520)"><tspan x="0" y="0">%rops%</tspan></text>
+  <text class="st2" transform="translate(668.7 1520)"><tspan x="0" y="0">%rops%</tspan></text>
+</svg>
